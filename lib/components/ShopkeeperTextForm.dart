@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class ShopkeeperTextForm extends StatelessWidget {
   final String label;
-  final FormFieldSetter onSaved;
+  final FormFieldSetter onChanged;
   final Function(String? value) validator;
   String? placeHolder;
 
-  ShopkeeperTextForm({required this.label, required this.onSaved, required this.validator, this.placeHolder, Key? key});
+  ShopkeeperTextForm({required this.label, required this.onChanged, required this.validator, this.placeHolder, Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +31,11 @@ class ShopkeeperTextForm extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.0)
                   )
               ),
-              onSaved: onSaved,
+              // onSaved: onSaved,
               validator: (value) {
                 return validator(value);
               },
+              onChanged: onChanged,
             ),
           ),
           Container(height: 16.0,)
